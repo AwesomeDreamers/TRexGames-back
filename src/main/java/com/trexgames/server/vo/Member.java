@@ -10,7 +10,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class User {
+public class Member {
     @Id @GeneratedValue
     private long memberId;
 
