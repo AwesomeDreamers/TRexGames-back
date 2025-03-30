@@ -23,8 +23,7 @@ public class CorsConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         // 주소
-        corsConfiguration.setAllowedOriginPatterns(List.of("http://localhost:8090/**"));
-//        corsConfiguration.setAllowedOrigins(List.of("http://localhost:8090/"));
+        corsConfiguration.setAllowedOriginPatterns(List.of("http://localhost:3000"));
         // 메서드
         corsConfiguration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         // 헤더
