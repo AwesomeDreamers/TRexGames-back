@@ -14,7 +14,7 @@ public enum ResponseCode {
     DUPLICATE_EMAIL("DE", "Duplicate Email", HttpStatus.BAD_REQUEST),
     DUPLICATE_NICKNAME("DN", "Duplicate Nickname", HttpStatus.BAD_REQUEST),
     //DUPLICATE_TEL_NUMBER("DT", "Duplicate Tel Number", HttpStatus.BAD_REQUEST),
-    NOT_EXISTED_USER("NU", "User does not exist", HttpStatus.BAD_REQUEST),
+    NOT_EXISTED_USER("NU", "Member does not exist", HttpStatus.BAD_REQUEST),
     NOT_EXISTED_BOARD("NB", "Board does not exist", HttpStatus.BAD_REQUEST),
 
     // HTTP Status 401
