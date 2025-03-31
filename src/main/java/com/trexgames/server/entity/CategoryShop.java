@@ -1,4 +1,4 @@
-package com.trexgames.server.vo;
+package com.trexgames.server.entity;
 
 import jakarta.persistence.*;
 import java.util.Date;
@@ -8,7 +8,7 @@ public class CategoryShop {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private int id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="category_id")

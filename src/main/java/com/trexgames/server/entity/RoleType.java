@@ -1,4 +1,4 @@
-package com.trexgames.server.vo;
+package com.trexgames.server.entity;
 
 public enum RoleType {
     USER, ADMIN

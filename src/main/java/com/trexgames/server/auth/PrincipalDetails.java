@@ -1,6 +1,6 @@
 package com.trexgames.server.auth;
 
-import com.trexgames.server.vo.Member;
+import com.trexgames.server.entity.Member;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

@@ -1,4 +1,4 @@
-package com.trexgames.server.vo;
+package com.trexgames.server.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -12,7 +12,7 @@ import java.util.Date;
 @Builder
 public class Member {
     @Id @GeneratedValue
-    private long memberId;
+    private int memberId;
 
     private String email;
 
