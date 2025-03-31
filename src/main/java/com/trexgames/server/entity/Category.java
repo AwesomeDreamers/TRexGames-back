@@ -1,4 +1,4 @@
-package com.trexgames.server.vo;
+package com.trexgames.server.entity;
 
 import jakarta.persistence.*;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ public class Category {
     @Id
     @GeneratedValue
     @Column(name = "category_id")
-    private Long id;
+    private int id;
 
     private String name;
 

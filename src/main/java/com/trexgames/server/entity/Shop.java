@@ -1,4 +1,4 @@
-package com.trexgames.server.vo;
+package com.trexgames.server.entity;
 
 import jakarta.persistence.*;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ public class Shop {
     @Id
     @GeneratedValue
     @Column(name = "item_id")
-    private Long id;
+    private int id;
 
     @OneToMany(mappedBy = "shop", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CategoryShop> categoryShops = new ArrayList<>();
