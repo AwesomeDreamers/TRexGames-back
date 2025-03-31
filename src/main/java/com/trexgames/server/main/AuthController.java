@@ -20,7 +20,7 @@ public class AuthController {
 
     /**
      * @param dto
-     * @return Map (인증코드, 10분 제한)
+     * (인증코드, 10분 제한)
      */
     @PostMapping("/email-code")
     public ResponseEntity<ApiResponse<Void>> validateMember(@RequestBody EmailVerifyDto dto) {
