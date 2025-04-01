@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/auth")
@@ -19,13 +21,13 @@ public class AuthController {
     // 이메일 중복 확인 및 이메일 전송
 
     /**
-     * @param dto
+     * @param param
      * (인증코드, 10분 제한)
      */
     @PostMapping("/email-code")
-    public ResponseEntity<ApiResponse<Void>> validateMember(@RequestBody EmailVerifyDto dto) {
+    public ResponseEntity<ApiResponse<Void>> validateMember(@RequestBody Map<String,Object> param) {
         try {
-            authService.validateMember(dto);
+            authService.validateMember((String) param.get("email"));
             return ApiResponse.create(ResponseCode.SUCCESS);
         } catch (IllegalArgumentException e) {
             return ApiResponse.create(ResponseCode.DUPLICATE_EMAIL);

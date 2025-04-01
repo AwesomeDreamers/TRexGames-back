@@ -25,17 +25,17 @@ public class AuthService {
     private final RedisRepository redisRepository;
     
     // 이메일 중복 확인 및 이메일 전송
-    public void validateMember (EmailVerifyDto dto) {
+    public void validateMember (String email) {
         // 이메일 중복 확인
-        if (memberRepository.existsByEmail(dto.getEmail())) {
+        if (memberRepository.existsByEmail(email)) {
             throw new IllegalArgumentException("이미 존재하는 아이디입니다.");
         }
         // 이메일 전송 및 redis 저장함
-        Mail mail = Mail.create(dto.getEmail());
+        Mail mail = Mail.create(email);
         redisRepository.save(mail);
 
         sendEmail(
-                dto.getEmail(),
+                email,
                 "trexgames의 인증번호 이메일",
                 "인증번호: " + mail.getCode()
         );
@@ -48,7 +48,6 @@ public class AuthService {
         if (optionalMail.isEmpty()) {
             throw new IllegalStateException();
         }
-
         Mail mail = optionalMail.get();
 
         if (!String.valueOf(mail.getCode()).equals(dto.getCode())) {
